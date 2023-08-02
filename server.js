@@ -11,11 +11,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/user", userRoutes);
-app.use(express.static(path.join(__dirname, "frontend/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend/build/index.html"));
-});
 
 app.listen(
   process.env.PORT || 5000,
